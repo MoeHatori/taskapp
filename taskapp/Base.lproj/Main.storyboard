@@ -113,6 +113,17 @@
                                     <constraint firstAttribute="height" constant="120" id="dhO-VR-Fd6"/>
                                 </constraints>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ca-9I-peB">
+                                <rect key="frame" x="10" y="464" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-7Y-ZbU">
+                                <rect key="frame" x="10" y="495" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -122,20 +133,27 @@
                             <constraint firstItem="Jdw-VA-fMB" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" constant="10" id="4Gq-WB-5sg"/>
                             <constraint firstItem="uIg-MG-7Af" firstAttribute="trailing" secondItem="TXQ-XY-rCV" secondAttribute="trailing" constant="10" id="6U5-xf-QHi"/>
                             <constraint firstItem="KLw-R6-8rJ" firstAttribute="trailing" secondItem="uIg-MG-7Af" secondAttribute="trailing" id="HbQ-6f-5Fy"/>
+                            <constraint firstItem="uIg-MG-7Af" firstAttribute="trailing" secondItem="z5P-7Y-ZbU" secondAttribute="trailing" constant="10" id="Lob-xe-gly"/>
+                            <constraint firstItem="z5P-7Y-ZbU" firstAttribute="top" secondItem="6ca-9I-peB" secondAttribute="bottom" constant="10" id="MEA-dn-zbw"/>
+                            <constraint firstItem="z5P-7Y-ZbU" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" constant="10" id="Qha-AV-Wt8"/>
                             <constraint firstItem="hq5-Yt-En7" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" constant="10" id="Ra1-Uf-VvA"/>
+                            <constraint firstItem="uIg-MG-7Af" firstAttribute="trailing" secondItem="6ca-9I-peB" secondAttribute="trailing" constant="10" id="bGl-xO-CFZ"/>
                             <constraint firstItem="uIg-MG-7Af" firstAttribute="trailing" secondItem="hq5-Yt-En7" secondAttribute="trailing" constant="10" id="bl6-LT-vd4"/>
+                            <constraint firstItem="6ca-9I-peB" firstAttribute="top" secondItem="KLw-R6-8rJ" secondAttribute="bottom" constant="10" id="jB5-dX-25A"/>
                             <constraint firstItem="TXQ-XY-rCV" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" constant="10" id="mZr-6a-U2y"/>
                             <constraint firstItem="uIg-MG-7Af" firstAttribute="trailing" secondItem="Jdw-VA-fMB" secondAttribute="trailing" constant="10" id="nBM-fH-bWv"/>
                             <constraint firstItem="Jdw-VA-fMB" firstAttribute="top" secondItem="HST-uP-C1u" secondAttribute="bottom" constant="10" id="oPu-d6-fqh"/>
                             <constraint firstItem="uIg-MG-7Af" firstAttribute="trailing" secondItem="HST-uP-C1u" secondAttribute="trailing" constant="10" id="sVv-46-ZPf"/>
                             <constraint firstItem="KLw-R6-8rJ" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" id="sjd-3w-I4u"/>
                             <constraint firstItem="HST-uP-C1u" firstAttribute="top" secondItem="uIg-MG-7Af" secondAttribute="top" constant="10" id="sms-W7-Gsj"/>
+                            <constraint firstItem="6ca-9I-peB" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" constant="10" id="uAj-7W-7al"/>
                             <constraint firstItem="HST-uP-C1u" firstAttribute="leading" secondItem="uIg-MG-7Af" secondAttribute="leading" constant="10" id="v54-wP-PqN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIg-MG-7Af"/>
                     </view>
                     <navigationItem key="navigationItem" id="CM0-7a-cOj"/>
                     <connections>
+                        <outlet property="categoryTextFeild" destination="z5P-7Y-ZbU" id="uga-Vv-2AI"/>
                         <outlet property="contentsTextView" destination="hq5-Yt-En7" id="8gF-Hw-n8V"/>
                         <outlet property="datePicker" destination="KLw-R6-8rJ" id="8E0-k7-FgH"/>
                         <outlet property="titleTextField" destination="Jdw-VA-fMB" id="fd7-7e-BvW"/>
