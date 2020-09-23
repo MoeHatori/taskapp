@@ -54,7 +54,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell" ,for: indexPath)
         
-        let task = taskArray[indexPath.row]
+        let task = searchResult[indexPath.row]
         cell.textLabel?.text = task.title
         
         let formatter = DateFormatter()
@@ -75,7 +75,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if (searchBar.text == ""){
             searchResult = taskArray
         }else{
-            searchResult = try! Realm().objects(Task.self).filter(searchBar.text!)
+            searchResult = try! Realm().objects(Task.self).filter("category = %@",searchBar.text!)
+            print(searchResult)
         }
         tableView.reloadData()
         
