@@ -20,7 +20,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //Realmインスタンスを取得
     let realm = try! Realm()
     
-    //リスト
+    //
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
     
     
@@ -38,6 +38,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     //各セルの内容を返すメソッド
+    //セルを生成して返却するメソッドで、セルの数だけ呼び出される
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell" ,for: indexPath)
         

@@ -56,11 +56,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bBr-tx-yal">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1wC-QA-4Xd">
-                            <connections>
-                                <segue destination="Cgd-2n-zjb" kind="show" id="WD8-Qn-PaV"/>
-                            </connections>
-                        </barButtonItem>
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="ifc-2J-K5X">
+                            <rect key="frame" x="131" y="5" width="153" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="1wC-QA-4Xd">
+                                <connections>
+                                    <segue destination="Cgd-2n-zjb" kind="show" id="WD8-Qn-PaV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="Dol-Eo-fie">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n3S-o3-S7I">
+                                    <rect key="frame" x="348" y="113" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="tZI-ES-Vdx" id="f1n-5Z-lmy"/>

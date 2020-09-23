@@ -11,6 +11,8 @@ import RealmSwift
 import UserNotifications
 
 class InputViewController: UIViewController {
+    
+    //各部品の宣言
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -18,7 +20,7 @@ class InputViewController: UIViewController {
     //★カテゴリーの宣言
     @IBOutlet weak var categoryTextFeild: UITextField!
     
-    
+    //realmのインスタンスを生成する
     let realm = try! Realm()
     var task: Task!
 
@@ -32,14 +34,22 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
+        //★categoryの追加
+        categoryTextFeild.text = task.category
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        
         try! realm.write {
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
+            //★categoryの追加(未入力の可能性があるから!つける)
+            self.task.category = self.categoryTextFeild.text!
+            //データの追加
             self.realm.add(self.task, update: .modified)
+            //print(self.task) //debug
         }
 
         setNotification(task: task)
