@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tZI-ES-Vdx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5ix-os-dic" detailTextLabel="0O6-FW-H9S" style="IBUITableViewCellStyleSubtitle" id="aLs-36-Kuw">
@@ -45,40 +45,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1nB-ih-Eaz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3vm-IQ-OTH"/>
+                                    <constraint firstAttribute="width" constant="414" id="XfO-rK-QpP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="aSU-MW-9HP"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="tZI-ES-Vdx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CTu-h2-WgS"/>
-                            <constraint firstItem="tZI-ES-Vdx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DvL-sY-BID"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tZI-ES-Vdx" secondAttribute="bottom" id="QrM-86-yqD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tZI-ES-Vdx" secondAttribute="trailing" id="VhL-oI-dkH"/>
+                            <constraint firstItem="1nB-ih-Eaz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NKE-mL-atY"/>
+                            <constraint firstItem="1nB-ih-Eaz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WyI-gc-r9w"/>
+                            <constraint firstItem="1nB-ih-Eaz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aSP-3J-tF0"/>
+                            <constraint firstItem="tZI-ES-Vdx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eIV-N4-9Uu"/>
+                            <constraint firstItem="1nB-ih-Eaz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jI2-k7-vZS"/>
+                            <constraint firstItem="1nB-ih-Eaz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kqF-jA-sw6"/>
+                            <constraint firstItem="tZI-ES-Vdx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="myu-PD-CKl"/>
+                            <constraint firstItem="tZI-ES-Vdx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rP2-uR-6Sh"/>
+                            <constraint firstItem="tZI-ES-Vdx" firstAttribute="top" secondItem="1nB-ih-Eaz" secondAttribute="bottom" id="wxa-Ka-cb8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bBr-tx-yal">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="ifc-2J-K5X">
-                            <rect key="frame" x="131" y="5" width="153" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="1wC-QA-4Xd">
-                                <connections>
-                                    <segue destination="Cgd-2n-zjb" kind="show" id="WD8-Qn-PaV"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="Dol-Eo-fie">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n3S-o3-S7I">
-                                    <rect key="frame" x="348" y="113" width="46" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1wC-QA-4Xd">
+                            <connections>
+                                <segue destination="Cgd-2n-zjb" kind="show" id="WD8-Qn-PaV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="1nB-ih-Eaz" id="Qd0-0G-kIF"/>
                         <outlet property="tableView" destination="tZI-ES-Vdx" id="f1n-5Z-lmy"/>
                         <segue destination="Cgd-2n-zjb" kind="show" identifier="cellSegue" id="vu1-Bl-NWk"/>
                     </connections>

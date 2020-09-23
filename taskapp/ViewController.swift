@@ -10,9 +10,12 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     //TableViewを使うからデリゲートを宣言
 
+    //★searchBarを使うための宣言
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     //TableViewを使うための宣言
     @IBOutlet weak var tableView: UITableView!
        
@@ -20,9 +23,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //Realmインスタンスを取得
     let realm = try! Realm()
     
-    //
+    //日付でソートするタスクが格納されるリスト
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
     
+    //検索結果の配列
+    var searchResult = try! Realm().objects(Task.self)
     
     
     override func viewDidLoad() {
@@ -30,11 +35,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        
+        searchBar.enablesReturnKeyAutomatically = false
+        
+        searchResult = taskArray
+        
     }
     
     //セル数を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count
+        //return taskArray.count
+        return searchResult.count
     }
     
     //各セルの内容を返すメソッド
@@ -55,6 +67,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return cell
     }
+    
+    //★文字列検索
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        
+        if (searchBar.text == ""){
+            searchResult = taskArray
+        }else{
+            searchResult = try! Realm().objects(Task.self).filter(searchBar.text!)
+        }
+        tableView.reloadData()
+        
+    }
+    
+    
+    
     
     //各セルを選択したときに実行されるメソッド
     //セルをタップしたときにタスク入力画面に遷移させる
